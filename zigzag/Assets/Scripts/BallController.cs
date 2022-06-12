@@ -18,12 +18,13 @@ public class BallController : MonoBehaviour
     void Update()
     {
         isDown = transform.position.y <= 0.5f;
-        if (isDown)
-        {
+        if (isDown || Input.touchCount < 1)
+        { 
             return;
         }
         
-        if (Input.GetMouseButtonDown(0)) // sol butona basılımca bir işlem yapsın
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Began) // ekrana basılımca bir işlem yapsın
         {
             if (navigation.x == 0)
             {

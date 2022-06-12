@@ -17,10 +17,6 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
 
     public void CreateFloor()
     {
